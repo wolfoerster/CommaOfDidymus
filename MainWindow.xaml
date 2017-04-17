@@ -1,0 +1,17 @@
+﻿<Window x:Class="CommaOfDidymus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:my="clr-namespace:CommaOfDidymus"
+        Title="The Comma of Didymus" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+  <Grid Margin="4">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1000"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <oxy:PlotView Grid.Column="0" Model="{Binding PlotModel}" MouseWheel="PlotMouseWheel"/>
+    <my:NotesGrid Grid.Column="1" Notes="{Binding Notes}" SomethingChanged="SomethingChanged"/>
+    <my:RatioControl Grid.Column="2" VerticalAlignment="Top" Margin="8,0,0,0"/>
+  </Grid>
+</Window>

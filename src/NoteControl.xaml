@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="CommaOfDidymus.NoteControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:my="clr-namespace:CommaOfDidymus">
+  <StackPanel Orientation="Horizontal">
+    <TextBox Width="40" Height="22" Text="{Binding Path=Frequency, StringFormat={}{0:F0}, UpdateSourceTrigger=PropertyChanged}"/>
+    <ScrollBar Width="18" Height="22" Scroll="OnScroll" Minimum="-100" Maximum="100" Value="0" SmallChange="0.01"/>
+    <my:Knob Width="20" Height="20" Value="{Binding Amplitude}" IsChecked="{Binding IsUsed}" MouseRightButtonDown="KnobRightButtonDown" Margin="4,0,0,0"/>
+  </StackPanel>
+</UserControl>
