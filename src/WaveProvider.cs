@@ -24,9 +24,9 @@ namespace CommaOfDidymus
         {
 			this.notes = notes;
             SetWaveFormat(44100, 1);
-        }
+		}
 		Notes notes;
-		ulong sample;
+		uint sample;
 
         public override int Read(float[] buffer, int offset, int sampleCount)
         {
