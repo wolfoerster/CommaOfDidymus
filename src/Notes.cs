@@ -25,7 +25,7 @@ namespace CommaOfDidymus
         {
             for (int i = 1; i < 12; i++)
             {
-                Note note = new Note(110 * i, (11 - i) * 0.1 + 0.05);
+				Note note = new Note(110 * i, (11 - i) * 0.1 + 0.05);
                 this.Add(note);
             }
             this[0].IsUsed = true;
@@ -40,7 +40,7 @@ namespace CommaOfDidymus
                 if (note.IsUsed)
                 {
                     numUsed++;
-                    amplitude += note.Amplitude * Math.Cos(note.Omega * t);
+					amplitude += note.Amplitude * Math.Cos(2 * Math.PI * note.Frequency * t);
                 }
             }
 			return numUsed > 0 ? amplitude / numUsed : 0;

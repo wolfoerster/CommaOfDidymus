@@ -26,17 +26,14 @@ namespace CommaOfDidymus
             SetWaveFormat(44100, 1);
         }
 		Notes notes;
-		int sample = 0;
+		ulong sample;
 
         public override int Read(float[] buffer, int offset, int sampleCount)
         {
-            for (int n = 0; n < sampleCount; n++)
+            for (int n = 0; n < sampleCount; n++, sample++)
             {
                 double t = sample / (double)WaveFormat.SampleRate;
                 buffer[n + offset] = (float)notes.GetAmplitude(t);
-
-                if (++sample >= WaveFormat.SampleRate)
-                    sample = 0;
             }
             return sampleCount;
         }

@@ -47,15 +47,11 @@ namespace CommaOfDidymus
                 if (frequency != value)
                 {
                     frequency = Math.Max(value, 1);
-					//--- time dependent calculations need the frequency multiplied by 2PI (which is then called omega):
-                    Omega = 2 * Math.PI * Math.Round(value);//--- non-integral values end up with a click in NAudio!
                     FirePropertyChanged("Frequency");
                 }
             }
         }
         double frequency;
-
-        public double Omega { get; private set; }
 
         public double Amplitude
         {
