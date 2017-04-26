@@ -25,7 +25,7 @@ namespace CommaOfDidymus
         {
             for (int i = 1; i < 12; i++)
             {
-				Note note = new Note(110 * i, (11 - i) * 0.1 + 0.05);
+				Note note = new Note(110 * i, 1.15 - i * 0.1);
                 this.Add(note);
             }
             this[0].IsUsed = true;
@@ -33,7 +33,7 @@ namespace CommaOfDidymus
 
         public double GetAmplitude(double t)
         {
-            int numUsed = 0;
+			int numUsed = 0;
             double amplitude = 0;
             foreach (var note in this)
             {

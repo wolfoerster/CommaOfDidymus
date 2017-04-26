@@ -27,7 +27,7 @@ namespace CommaOfDidymus
 		}
 		Notes notes;
 		uint sample;
-
+																								  
         public override int Read(float[] buffer, int offset, int sampleCount)
         {
             for (int n = 0; n < sampleCount; n++, sample++)
